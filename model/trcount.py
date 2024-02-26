@@ -1,5 +1,5 @@
 ''''
-Author: Ahmed Zgaren
+Author: 
 Date: February 2024
 '''
 from torch import nn
