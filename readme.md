@@ -4,8 +4,8 @@
 ## Environment 
 Here is the code to setup the conda environment:
 ```bash
-git clone https://github.com/AhmedZgaren/Countvit.git
-cd Countvit
+git clone ******to\be\added******
+cd Save
 conda env create -f environment.yml
 conda activate count
 ```
