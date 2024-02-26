@@ -1,9 +1,4 @@
 # SAVE: zero-shot generic object counting with Self-Attention on Visual Embedding
->Ahmed Zgaren<sup>1,2</sup>, Wassim Bouachir<sup>2</sup>, Nizar Bouguila<sup>1</sup>
-
->><sup>1</sup> CIIS, Concordia University,
-
->><sup>2</sup> Data science Lab, TELUQ University
 
 ![img](overview.jpg)
 ## Environment 
