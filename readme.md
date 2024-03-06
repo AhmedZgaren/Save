@@ -1,4 +1,4 @@
-# SAVE: zero-shot generic object counting with Self-Attention on Visual Embedding
+# SAVE: Self-Attention on Visual Embedding for zero-shot generic object counting  
 
 ![img](overview.jpg)
 ## Environment 
