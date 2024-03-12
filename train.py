@@ -1,9 +1,4 @@
-''''
-Author: Ahmed Zgaren
-Date: February 2024
-This is the official implementation of the train script for SAVE model
-Here, we fix the best hyperparameters to obtain the best model weights
-'''
+
 
 import wandb
 from datetime import datetime

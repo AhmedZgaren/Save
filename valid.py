@@ -1,8 +1,4 @@
-''''
-Author: Ahmed Zgaren
-Date: February 2024
-Script to test the model on the validation set of FSC147
-'''
+
 
 
 from torch.utils.data import DataLoader
