@@ -47,18 +47,18 @@ python train.py
 
 >To test the model in the FSC147 validation set:
 ```bash
-python valid.py -valid
+python valid.py -valid True
 ```
 
 >To test the model in the FSC147 test set:
 ```bash
-python valid.py -test
+python valid.py -test True
 ```
 >To test the model in the COCO validation set:
 ```bash
-python valid.py -vcoco
+python valid.py -vcoco True
 ```
 >To test the model in the COCO test set:
 ```bash
-python valid.py -tcoco
+python valid.py -tcoco True
 ```
