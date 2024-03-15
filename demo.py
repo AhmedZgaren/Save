@@ -1,5 +1,5 @@
 '''
-Author: Ahmed Zgaren
+Author: 
 Date: Feb 2024
 '''
 import torch
