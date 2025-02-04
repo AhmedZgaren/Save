@@ -1,4 +1,7 @@
-
+'''
+Author: Ahmed Zgaren
+Date: Feb 2024
+'''
 import torch
 from torch import Tensor, nn
 from .regressor import RegNet
@@ -11,7 +14,7 @@ from transformers import DeiTForImageClassification
 class Trans(nn.Module):
     def __init__(self, d_model,h, d_ff, num_layers, enc_in, drop = 0.1):
         super(Trans, self).__init__()
-
+        #VEM
         self.encoder = nn.Sequential(
             CotLayer(enc_in, 3),
             nn.Conv2d(enc_in, enc_in,3,1),
@@ -25,8 +28,9 @@ class Trans(nn.Module):
             nn.Conv2d(enc_in, d_model,3,1)
    
         )
-        
+        #SAMM
         self.transformer = Transformer(d_model)
+        #CRM
         self.count = RegNet(d_model, dropout = drop)
         self.flatten = nn.Flatten(1,-1)
         self.gap = nn.AvgPool1d(196)
@@ -40,18 +44,13 @@ class Trans(nn.Module):
         self.apply(_weights_init)
             
     def forward(self, x):
-#         with_encoder
-        
-        z = self.encoder(x)
-        out  = z.reshape(z.shape[0], z.shape[1],z.shape[2]*z.shape[3])
-        out = out.permute(0,2,1)
-        out, tmap = self.transformer(out)
-        
-        
-        
-        #
-        out = self.gap(tmap[0][:,1:].permute(0,2,1))
-        out = self.flatten(out)
+        #x: feature maps from backbone (shape: Batch,enc_in, width, height; batch, 256,80,80)
+        z = self.encoder(x) # shape: batch x d_model=768 x 14 x 14
+        out  = z.reshape(z.shape[0], z.shape[1],z.shape[2]*z.shape[3]) # shape: batch x 768 x 196
+        out = out.permute(0,2,1) #shape: batch x 196 x 768 
+        out, tmap = self.transformer(out) # tmap shape: batch x 197 x 768
+        out = self.gap(tmap[0][:,1:].permute(0,2,1)) # shape: batch x 1 x 197
+        out = self.flatten(out) #shape: batch x 197
         
         out = self.count(out)
         
@@ -59,13 +58,13 @@ class Trans(nn.Module):
     
 class Transformer(nn.Module):
     '''
-    Transformer encoder processes convolved ECG samples
-    Stacks a number of TransformerEncoderLayers
+    SAMM class definition 
     '''
     def __init__(self, d_model):
         super(Transformer, self).__init__()
+        #import pretrained ViT
         DEIT = DeiTForImageClassification.from_pretrained('facebook/deit-base-distilled-patch16-224')
-        
+        #create the learnable token
         self.class_token = nn.Parameter(torch.zeros(1, 1, d_model))
 
         self.transformer_encoder = DEIT.deit.encoder

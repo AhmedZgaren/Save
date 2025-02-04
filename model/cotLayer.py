@@ -1,4 +1,6 @@
-
+'''
+Code copied from this repo https://github.com/JDAI-CV/CoTNet
+'''
 import torch
 from torch import nn
 from .aggregation_zeropad import LocalConvolution

@@ -1,3 +1,7 @@
+'''
+Author: Ahmed Zgaren
+Date: Feb 2024
+'''
 import torch.nn as nn
 
 class RegNet(nn.Module):

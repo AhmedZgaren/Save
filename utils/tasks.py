@@ -1,8 +1,7 @@
-#Yolo model definition
-#Here I modified the YOLO, BaseModel, and DetectionModel classes to load a custom model
-#First, modify the yaml file to define the model architecture, just comment/uncomment parts of the original implementation
-#Then, the YOLO class create a new model from the yaml file
-#Finally, load the weights of the pretrained model into the model using the load function
+'''
+Imported from Ultralytics repo
+Modified version to extract features from yolo architecture
+'''
 
 import contextlib
 from copy import deepcopy

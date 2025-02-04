@@ -1,10 +1,10 @@
 # SAVE: Self-Attention on Visual Embedding for zero-shot generic object counting  
 
-![img](overview.jpg)
+![img](new_overview.png)
 ## Environment 
 Here is the code to setup the conda environment:
 ```bash
-git clone ******to\be\added******
+git clone https://github.com/AhmedZgaren/Save.git
 cd Save
 conda env create -f environment.yml
 conda activate count
@@ -27,17 +27,6 @@ python demo.py --i path\to\img
 ### Download FSC147 dataset
 Use this [link](https://drive.google.com/file/d/1ymDYrGs9DSRicfZbSCDiOu0ikGDh5k6S/view?usp=sharing) to download the FSC147 dataset and store images under the folder `.\data\images\`  
 
-Also you need the pretrained backbone in FSC147:
-
-[backbone](https://drive.google.com/file/d/1xnouES1ZJ0qJoubpWjNCHmbNtc6Jn2lu/view?usp=sharing)
-
-Store the backbone weigths in the pretrained folder.
-### Generate the synthetic data
->run the script `augment_mix.py` to generate synthetic data from FSC147 images
-```bash
-python augment_mix.py
-```
->Use this [link](https://drive.google.com/file/d/1JAt5w5GrXn2V_rndw0RVHszttHUHofBP/view?usp=sharing) to download the bboxes annotations and store it under `.\data\labels`
 ### Train your model
 >To train the model just run the following command:
 ```bash

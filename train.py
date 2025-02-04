@@ -1,4 +1,7 @@
-
+'''
+Author: Ahmed Zgaren
+Date: Feb 2024
+'''
 
 import wandb
 from datetime import datetime
@@ -81,7 +84,7 @@ if __name__ == "__main__":
     enc_in = 256 #Output channel dimension of the backbone
 
     epochs = 100
-    lr = 0.0001393
+    lr = 0.0001393 # learning rate
     batchsize = 32
     
     #parameters for validation dataloader
@@ -109,7 +112,7 @@ if __name__ == "__main__":
 
     # Dataset preparation
     
-    tr_d = CustomImageDataset('data/train.csv', 'data/images/')
+    tr_d = CustomImageDataset('data/train.csv', 'data/images/') 
     val_d = CustomImageDataset('data/valid.csv', 'data/images/')
     
     # train and valid dataloader

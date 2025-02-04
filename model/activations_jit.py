@@ -1,5 +1,5 @@
 """ Activations
-
+###### Code copied from https://github.com/JDAI-CV/CoTNet ############
 A collection of jit-scripted activations fn and modules with a common interface so that they can
 easily be swapped. All have an `inplace` arg even if not used.
 

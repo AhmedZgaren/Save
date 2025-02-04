@@ -1,4 +1,5 @@
 """ Activation Factory
+###### Code copied from https://github.com/JDAI-CV/CoTNet ############
 Hacked together by / Copyright 2020 Ross Wightman
 """
 from .activations import *
