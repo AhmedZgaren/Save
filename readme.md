@@ -1,5 +1,8 @@
 # SAVE: Self-Attention on Visual Embedding for zero-shot generic object counting  
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/save-self-attention-on-visual-embedding-for/exemplar-free-counting-on-fsc147)](https://paperswithcode.com/sota/exemplar-free-counting-on-fsc147?p=save-self-attention-on-visual-embedding-for)
+
+
 ![img](new_overview.png)
 ## Environment 
 Here is the code to setup the conda environment:
